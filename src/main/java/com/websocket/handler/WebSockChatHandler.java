@@ -22,7 +22,7 @@ public class WebSockChatHandler extends TextWebSocketHandler {
         log.info("payload {}", payload);
 
         // TextMessageを利用しClientにメッセージを送る。
-        TextMessage textMessage = new TextMessage("Welcome chatting Server~");
-        session.sendMessage(textMessage);
+//        TextMessage textMessage = new TextMessage("Welcome chatting Server~");
+//        session.sendMessage(textMessage);
     }
 }
