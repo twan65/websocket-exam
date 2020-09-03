@@ -53,12 +53,12 @@
                     axios.get('/chat/rooms').then(response => { this.chatrooms = response.data; });
                 },
                 createRoom: function() {
-                    if("" === this.room_name) {
+                    if(!this.room_name) {
                         alert("チャットルーム名を入力してください。");
                         return;
                     } else {
                         var params = new URLSearchParams();
-                        params.append("name",this.room_name);
+                        params.append("name", this.room_name);
                         axios.post('/chat/room', params)
                         .then(
                             response => {
@@ -72,7 +72,7 @@
                 },
                 enterRoom: function(roomId) {
                     var sender = prompt('ニックネームを入力してください。');
-                    if(sender != "") {
+                    if(sender) {
                         localStorage.setItem('wschat.sender',sender);
                         localStorage.setItem('wschat.roomId',roomId);
                         location.href="/chat/room/enter/"+roomId;
