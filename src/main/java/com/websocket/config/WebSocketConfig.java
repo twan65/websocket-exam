@@ -1,17 +1,12 @@
 package com.websocket.config;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
-import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.config.annotation.*;
 
-@RequiredArgsConstructor
 @Configuration
-@EnableWebSocket // WebSocket活性化
+@EnableWebSocketMessageBroker // is used to enable our WebSocket server
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
-
-    private final WebSocketHandler webSocketHandler;
 
     /**
      * pub/subとはメッセージを供給する主体と消費する主体を分離して提供する。
