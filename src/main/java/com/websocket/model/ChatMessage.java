@@ -6,6 +6,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ChatMessage {
+    // ENTER：チャットローム参加
+    // TALK：やり取り
     public enum MessageType {
         ENTER, TALK
     }
